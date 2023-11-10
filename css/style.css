@@ -1,0 +1,67 @@
+/* white #fefbf8 */
+/* black #001524 , #131313 */
+/* pink #f0decc */
+/* font-family: 'Montserrat Alternates', sans-serif; */
+/* font-family: 'Cedarville Cursive', cursive; */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: black;
+  font-family: "Roboto", sans-serif;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.loader {
+  width: 100%;
+  background-color: #131313;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 100px;
+  text-align: center;
+}
+
+.loader p {
+  color: white;
+  font-weight: 100;
+  letter-spacing: 3px;
+}
+.loader h1 {
+  color: white;
+  font-size: 5vmax;
+}
+.wrapper {
+  overflow: hidden;
+}
+.mix {
+  color: aqua;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+.green {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 0px;
+  background-color: aqua;
+}
+.white {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 0px;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid red;
+}
