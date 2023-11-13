@@ -37,35 +37,56 @@ function init() {
   // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
   ScrollTrigger.refresh();
 }
-init();
+// init();
+
+// js from here
+function revealFunction() {
+  const reveal = document.querySelectorAll(".reveal");
+  reveal.forEach((elem) => {
+    console.log("(((((((((((((((((");
+    var parent = document.createElement("span");
+    var child = document.createElement("span");
+    parent.classList.add("parent");
+    child.classList.add("child");
+
+    child.innerHTML = elem.innerHTML;
+    parent.appendChild(child);
+
+    elem.innerHTML = "";
+    elem.appendChild(parent);
+  });
+}
+revealFunction();
 
 // gsap , scolltrigger and locomotive...
 const tl = gsap.timeline();
-tl.from(".loader .wrapper  p, .loader .wrapper h1", {
-  opacity: 0,
-  duration: 0.6,
-  stagger: 0.4,
-});
-tl.to(".loader .wrapper  p, .loader .wrapper h1", {
-  y: "-100%",
-  duration: 0.6,
-  delay: 0.9,
-});
-
-tl.to(".loader", {
-  height: "0vh",
-  duration: 2,
-  ease: Expo.easeInOut,
+tl.from(".reveal .parent .child span", {
+  x: 100,
+  duration: 1,
+  stagger: 0.1,
+  ease: Power3.easeInOut,
 })
+  .to(".reveal .parent .child", {
+    y: "-100%",
+    duration: 1,
+    ease: Circ.easeInOut,
+  })
+  .to(".loader", {
+    height: "0vh",
+    duration: 0.7,
+    ease: Circ.easeInOut,
+  })
   .to(".green", {
     height: "100%",
-    duration: 2,
-    delay: -2,
-    ease: Expo.easeInOut,
+    top: 0,
+    duration: 1,
+    delay: -1,
+    ease: Circ.easeInOut,
   })
-  .to(".white", {
-    height: "100%",
-    duration: 2,
-    delay: -1.6,
+  .to(".green", {
+    height: "0%",
+
+    duration: 1,
+    delay: -0.4,
     ease: Expo.easeInOut,
   });
